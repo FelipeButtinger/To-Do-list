@@ -7,13 +7,27 @@
     <link rel="stylesheet" href="../css/home.css">
 </head>
 <body>
-    <div id="searchDiv">
-        <input type="text" maxlength="120">
+    <div id="inputDiv">
+        <select name="priority" id="optionButton">
+            <option value="" disabled selected hidden>Prioridade</option>
+            <option value="Low">Baixa</option>
+            <option value="Medium">Média</option>
+            <option value="High">Alta</option>
+        </select>
+        <input type="text" maxlength="60">
         <button id="addItem">Adicionar</button>
     </div>
     <div id="itemsDiv">
         <div id="list">
-            <div class="item"></div>
+            <div class="item">
+                <div class="textDiv">
+                    <p>aerferaerferaerferaerferaerferaerferaerferaerferaerferaerfer</p>
+                </div>
+                <div class="buttonDiv">
+                    <button id="finishButton">Finalizar</button>
+                    <button id="removeButton">Remover</button>
+                </div>
+            </div>
             <div class="item"></div>
            
         </div>
