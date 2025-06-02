@@ -1,0 +1,48 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    margin-top: 15vh;
+    min-height: 400px;
+    min-width: 350px;
+
+    height: 50vh;
+    width: 25vw;
+    background-color: blueviolet;
+}
+#topDiv{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content:space-evenly;
+
+    height: 70%;
+}
+#bottomDiv{
+    display: flex;
+    flex-direction: column;
+
+}
+input{
+    font-size: 1.75rem;
+    min-width: 240px;
+    min-height: 50px;
+}
+button{
+    font-size: 1.75rem;
+    min-width: 120px;
+    min-height: 60px;
+
+    border-radius: 10px;
+    border-style: none;
+}
+a{
+    font-size: 1.25rem;
+}
