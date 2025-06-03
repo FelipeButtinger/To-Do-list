@@ -12,17 +12,17 @@
     
     <main>
         <div id="topDiv">
-            <input type="text" id="username" maxlength="30" placeholder="Nome de usuário">
+            <input type="text" id="username" maxlength="30" placeholder="Nome de usuário" oninput="passwordStandards()" >
 
             <div id="passwordGroup">
-                <input type="password" id="password" placeholder="Senha" onchange="passwordStandards()">
-                <p>Contém números</p>
-                <p>Contém letras maiúsculas e minúsculas</p>
+                <input type="password" id="password" placeholder="Senha" oninput="passwordStandards()">
+                <p id="numberRequirement" style="color: red;">Contém números</p>
+                <p id="letterRequirement" style="color: red;">Contém letras maiúsculas e minúsculas</p>
             </div>
         </div>
         
         <div id="bottomDiv" onclick="cadastrar()">
-        <button>Criar Conta</button>
+        <button id="registerButton" disabled>Criar Conta</button>
         <a href="../html/login.html">Já tenho conta.</a>
         </div>
         
@@ -30,5 +30,5 @@
 
 </body>
 
-
+<script src="../js/register.js"></script>
 </html>
