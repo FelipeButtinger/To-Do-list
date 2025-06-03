@@ -14,7 +14,7 @@ main{
 
     height: 50vh;
     width: 25vw;
-    background-color: blueviolet;
+    background-color: rgb(202, 177, 224);
 }
 #topDiv{
     display: flex;
@@ -24,6 +24,16 @@ main{
     justify-content:space-evenly;
 
     height: 70%;
+}
+#passwordGroup {
+    
+    margin-top: 10px;
+}
+
+#passwordGroup p {
+    margin: 2px 0;
+    font-size: 0.9rem; 
+    color: #333;
 }
 #bottomDiv{
     display: flex;
@@ -42,7 +52,10 @@ button{
 
     border-radius: 10px;
     border-style: none;
+
+
 }
+
 a{
     font-size: 1.25rem;
 }

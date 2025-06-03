@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Register</title>
+    <link rel="stylesheet" href="../css/login.css">
+    
+</head>
+
+<body>
+    
+    <main>
+        <div id="topDiv">
+            <input type="text" id="username" maxlength="30" placeholder="Nome de usuário">
+
+            <div id="passwordGroup">
+                <input type="password" id="password" placeholder="Senha" onchange="passwordStandards()">
+                <p>Contém números</p>
+                <p>Contém letras maiúsculas e minúsculas</p>
+            </div>
+        </div>
+        
+        <div id="bottomDiv" onclick="cadastrar()">
+        <button>Criar Conta</button>
+        <a href="../html/login.html">Já tenho conta.</a>
+        </div>
+        
+    </main>
+
+</body>
+
+
+</html>
