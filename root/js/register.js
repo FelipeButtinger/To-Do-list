@@ -1,4 +1,3 @@
-let contador = 0
 function passwordStandards() {
     let password = document.getElementById("password").value;
     let username = document.getElementById("username").value;
@@ -25,4 +24,52 @@ function passwordStandards() {
         document.getElementById("registerButton").disabled = true
     }
    
+}
+async function register(){
+    const token = localStorage.getItem("token");
+    const name = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    console.log(name,password)
+
+    
+      try {
+        const response = await fetch("http://localhost:3000/register", {
+          method: "POST",
+          headers: { 
+            'Content-Type': 'application/json', 
+            Authorization: `Bearer ${token}` },
+          body: JSON.stringify({
+                name: name,
+                password: password
+            })
+        });
+  
+        if (response.ok) {
+          alert("Usuário Registrado com sucesso")
+
+            const response = await fetch('http://localhost:3000/login', {
+                method: 'POST', 
+                headers: {
+                    'Content-Type': 'application/json' 
+                },
+                
+                body: JSON.stringify({ name, password })
+            });
+            if (response.ok) {
+                
+                const data = await response.json();
+                
+                localStorage.setItem('token', data.token); 
+                
+                window.location.href = 'home.html'; 
+            } else {
+              
+            }
+        } else {
+          alert(await response.text())
+        }
+      } catch (error) {
+        alert("Erro ao processar a requisição.")
+        console.error(error);
+      }
 }

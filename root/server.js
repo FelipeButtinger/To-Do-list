@@ -32,7 +32,7 @@ db.connect((err) => {
   console.log('Conectado ao banco de dados MySQL!');
 });
 
-app.post('/register', upload.single('profilePhoto'), async (req, res) => {
+app.post('/register', async (req, res) => {
   const { name, password } = req.body;
   
 
@@ -44,7 +44,12 @@ app.post('/register', upload.single('profilePhoto'), async (req, res) => {
   db.query(sql, [name, hashedPassword], (err, result) => {
       if (err) {
           console.error('Erro ao registrar usuário:', err);
-          return res.status(500).json({ error: 'Erro no servidor' });
+          if(err.sqlMessage == `Duplicate entry '${name}' for key 'users.name'`){
+            return res.status(500).json('Este usuário já existe');
+          }else{
+            return res.status(500).json({ error: 'Erro no servidor' });
+          }
+          
       }
       res.json({ message: 'Usuário registrado com sucesso!', userId: result.insertId });
   });
