@@ -5,7 +5,7 @@ body{
     height: 100vh;
 
 }
-#inputDiv{
+#creationDiv{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -22,6 +22,23 @@ body{
 #optionButton{
     height: 50%;
     font-size: 1.5rem;
+}
+#inputDiv {
+    position: relative;
+}
+
+#charCount {
+    position: absolute;
+
+    bottom: 0;
+    right: 0;  
+    margin: 2px;
+    margin-right: 5px;
+    font-size: 0.8rem;
+    color: rgba(0,0,0,0.5);
+
+    pointer-events: none; 
+    user-select: none;
 }
 input{
     height: 50px;
@@ -77,9 +94,16 @@ input{
 .textDiv{
     height: 70%;
     width: 70%;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
     background-color: aliceblue;
-    font-size: 1.5rem;
+    font-size: 1.35rem;
+}
+.textDiv p{
+    overflow-wrap: break-word; /* Quebra palavra se for necessário */
+    word-wrap: break-word;
 }
 .buttonDiv{
     display: flex;

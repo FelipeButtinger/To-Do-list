@@ -7,21 +7,24 @@
     <link rel="stylesheet" href="../css/home.css">
 </head>
 <body>
-    <div id="inputDiv">
+    <div id="creationDiv">
         <select name="priority" id="optionButton">
             <option value="" disabled selected hidden>Prioridade</option>
             <option value="Low">Baixa</option>
             <option value="Medium">Média</option>
             <option value="High">Alta</option>
         </select>
-        <input type="text" maxlength="60">
+        <div id="inputDiv">
+    <input id="taskName" type="text" maxlength="60" oninput="inputChanges()">
+    <p id="charCount">0/60</p>
+</div>
         <button id="addItem">Adicionar</button>
     </div>
     <div id="itemsDiv">
         <div id="list">
             <div class="item">
                 <div class="textDiv">
-                    <p>aerferaerferaerferaerferaerferaerferaerferaerferaerferaerfer</p>
+                    <p>Sdwwwwwwwwwwwwwwwwwwwwwwwwfwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwd</p>
                 </div>
                 <div class="buttonDiv">
                     <button id="finishButton">Finalizar</button>
@@ -33,4 +36,5 @@
         </div>
     </div>
 </body>
+<script src="../js/home.js"></script>
 </html>
