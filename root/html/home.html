@@ -6,9 +6,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/home.css">
 </head>
-<body>
+<body onload="loadTasks()">
     <div id="creationDiv">
-        <select name="priority" id="optionButton">
+        <select name="priority" id="prioritySelect">
             <option value="" disabled selected hidden>Prioridade</option>
             <option value="Low">Baixa</option>
             <option value="Medium">Média</option>
@@ -18,20 +18,11 @@
     <input id="taskName" type="text" maxlength="60" oninput="inputChanges()">
     <p id="charCount">0/60</p>
 </div>
-        <button id="addItem">Adicionar</button>
+        <button id="addTask" onclick="addTask()">Adicionar</button>
     </div>
     <div id="itemsDiv">
         <div id="list">
-            <div class="item">
-                <div class="textDiv">
-                    <p>Sdwwwwwwwwwwwwwwwwwwwwwwwwfwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwd</p>
-                </div>
-                <div class="buttonDiv">
-                    <button id="finishButton">Finalizar</button>
-                    <button id="removeButton">Remover</button>
-                </div>
-            </div>
-            <div class="item"></div>
+            
            
         </div>
     </div>

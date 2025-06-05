@@ -101,6 +101,81 @@ app.get('/user', authenticateToken, (req, res) => {
     res.json(result[0]); 
   });
 });
+
+app.post('/taskCreation', async (req, res) => {
+  const { userId, taskName, importance } = req.body;
+  
+ const sqlConfire = 'select * from tasks WHERE taskname = ? and userId = ?;';
+ db.query(sqlConfire, [taskName, userId], (err,result)=>{
+  if(result.length === 0){
+    const sql = 'insert into tasks(userId, taskName,importance,state) values (?,?,?,?);';
+    db.query(sql, [userId,taskName,importance,0], (err, result) => {
+      if (err) {
+          console.error('Erro ao registrar task:', err);
+          return res.status(500).json('Erro ao registrar task');
+      }
+      res.json({ message: 'Task registrada com sucesso!' });
+  });
+}else{
+    return res.status(409).json('Esta task já existe');
+}
+ })
+
+  
+});
+
+app.get('/task', async (req, res) => {
+  const { userId } = req.query;  
+
+  const sql = 'SELECT * FROM tasks WHERE userId = ?';
+  
+  db.query(sql, [userId], (err, result) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send('Erro no servidor');
+    }
+
+    if (result.length === 0) {
+      return res.status(404).send('Nenhuma task encontrada');
+    }
+
+    return res.json(result);
+  });
+});
+app.delete('/task/:id', async (req,res)=>{
+  const { id } = req.params;
+
+  sql = 'DELETE from tasks where id = ?'
+
+  db.query(sql,[id],(err,result)=>{
+    if (err){
+      console.log(err)
+      return res.status(500).send('Erro ao deletar a task');
+    }
+    if(result.affectedRows === 0){
+      return res.status(404).send('Task não encontrada');
+    }
+    return res.send('Task deletada com sucesso');
+  })
+
+})
+app.patch('/task/:id', async (req,res)=>{
+  const {id} = req.params;
+  const {state} = req.body;
+
+  sql = "UPDATE tasks set state = ? where id = ?"
+
+  db.query(sql,[state,id],(err,result)=>{
+    if (err){
+      console.log(err)
+      return res.status(500).send('Erro ao atualizar a task');
+    }
+    if(result.affectedRows === 0){
+      return res.status(404).send('Task não encontrada');
+    }
+    return res.send('Task atualizada com sucesso');
+  })
+})
 app.listen(3000, () => {
   console.log('Servidor rodando na porta 3000');
 });
