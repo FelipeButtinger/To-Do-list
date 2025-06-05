@@ -33,7 +33,7 @@ async function register(){
 
     
       try {
-        const response = await fetch("http://localhost:3000/register", {
+        const response = await fetch("https://to-do-list-6gim.onrender.com/register", {
           method: "POST",
           headers: { 
             'Content-Type': 'application/json', 
@@ -47,7 +47,7 @@ async function register(){
         if (response.ok) {
           alert("Usuário Registrado com sucesso")
 
-            const response = await fetch('http://localhost:3000/login', {
+            const response = await fetch('https://to-do-list-6gim.onrender.com/login', {
                 method: 'POST', 
                 headers: {
                     'Content-Type': 'application/json' 

@@ -16,7 +16,7 @@ function inputChanges(){
 }
 async function getUserData(){
     const token = localStorage.getItem("token");
-    const userResponse = await fetch('http://localhost:3000/user', {
+    const userResponse = await fetch('https://to-do-list-6gim.onrender.com/user', {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -48,7 +48,7 @@ async function addTask(){
 
         
         try {
-    const response = await fetch("http://localhost:3000/taskCreation", {
+    const response = await fetch("https://to-do-list-6gim.onrender.com/taskCreation", {
         method: "POST",
         headers: {
             Authorization: `Bearer ${token}`,
@@ -83,7 +83,7 @@ window.location.reload();
 async function loadTasks(){
     const userData = await getUserData();
     const userId = userData.id
-    const response = await fetch(`http://localhost:3000/task?userId=${userId}`, {
+    const response = await fetch(`https://to-do-list-6gim.onrender.com/task?userId=${userId}`, {
     method: "GET",
     headers: {
       'Content-Type': 'application/json'
@@ -161,7 +161,7 @@ for(array of tasks){
 }
 }
 async function finishTask(idTask){
-    const response = await fetch(`http://localhost:3000/task/${idTask}`,{
+    const response = await fetch(`https://to-do-list-6gim.onrender.com/task/${idTask}`,{
         method:'PATCH',
         headers: {
       'Content-Type': 'application/json'
@@ -174,7 +174,7 @@ async function finishTask(idTask){
     window.location.reload();
 }
 async function resumeTask(idTask){
-    const response = await fetch(`http://localhost:3000/task/${idTask}`,{
+    const response = await fetch(`https://to-do-list-6gim.onrender.com/task/${idTask}`,{
         method:'PATCH',
         headers: {
       'Content-Type': 'application/json'
@@ -187,7 +187,7 @@ async function resumeTask(idTask){
     window.location.reload();
 }
 async function deleteTask(idTask){
-    const response = await fetch(`http://localhost:3000/task/${idTask}`,{
+    const response = await fetch(`https://to-do-list-6gim.onrender.com/task/${idTask}`,{
         method:'DELETE'
         
     })

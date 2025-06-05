@@ -3,7 +3,7 @@ async function login(){
     let name = document.getElementById("username").value;
     let password = document.getElementById("password").value;
 
-    const response = await fetch('http://localhost:3000/login', {
+    const response = await fetch('https://to-do-list-6gim.onrender.com/login', {
                 method: 'POST', 
                 headers: {
                     'Content-Type': 'application/json' 
