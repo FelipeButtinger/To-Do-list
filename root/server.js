@@ -13,7 +13,7 @@ const SECRET_KEY = process.env.SECRET_KEY;
 app.use(cors());
 app.use(bodyParser.json());
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'html', 'index.html'));
+    res.sendFile(path.join(__dirname, 'html', 'home.html'));
 });
 
 app.use('/js', express.static(path.join(__dirname, 'js')));
