@@ -61,7 +61,7 @@ async function register(){
                 
                 localStorage.setItem('token', data.token); 
                 
-                window.location.href = 'home.html'; 
+                window.location.href = '/html/home.html'; 
             } else {
               
             }

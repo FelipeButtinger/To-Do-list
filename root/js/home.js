@@ -28,7 +28,7 @@ async function getUserData(){
     return await userData
     
   } else {
-    window.location.href ="./login.html"
+    window.location.href ="/html/login.html"
     
   }
 }
