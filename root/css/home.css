@@ -405,7 +405,90 @@ button{
 }
 
 }
-@media (min-width: 450px) and (max-width: 750px) {
+@media (min-width: 500px) and (max-width: 750px) {
+  #creationDiv{ 
+    width: 80vw;
+    
+    height: 80px;
+}
+   
+#prioritySelect{
+    height: 50%;
+    font-size: 1.3rem;
+}
+
+#charCount {
+    position: absolute;
+
+    bottom: 0;
+    right: 0;  
+    margin: 2px;
+    margin-right: 5px;
+    font-size: 0.8rem;
+    color: rgba(0,0,0,0.5);
+
+    pointer-events: none; 
+    user-select: none;
+}
+input{
+    height: 50px;
+    width: 40vw;
+    
+    font-size: 1.3rem;
+
+    
+    
+}
+#addTask{
+    
+    height: 50px;
+    width: 5vw;
+    min-width: 70px;
+
+    font-size: 0.8rem;
+}
+.textDiv{
+    width: 50%;
+    font-size: 1rem;
+}
+.buttonDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+    min-width: 150px;
+    margin-left: 20px;
+    background-color: aqua;
+}
+button{
+    width: 70%;
+    height: 40%;
+
+    font-size: 1.3rem;
+}
+
+#itemsDiv{
+
+    width: 80vw;
+    max-width: 80vw;
+    max-height: 600px;
+    
+}
+#list{
+    
+    max-width: 80vw;
+    width: 80vw;
+}
+
+.item{
+    width: 70vw;
+    max-width: 70vw;
+}
+
+}
+@media (max-width: 500px){
   #creationDiv{ 
     width: 80vw;
     
